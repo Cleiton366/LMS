@@ -15,24 +15,19 @@
 
         header {
             background-color: #666;
-            padding: 1px;
             text-align: center;
-            font-size: 35px;
+            font-size: 20px;
             color: white;
-            height: 10%;
             width: 100%;
+            height: 70px;
         }
 
-        header > ul > li {
-            float: left;
+        header>div {
+            display: flex;
+            flex-direction: row;
         }
 
-         header > ul > li > a {
-            text-decoration: none;
-        }
-
-        header > ul > li > a:hover {
-            text-decoration: none;
+        header>div>button:hover {
             color: blue;
         }
 
@@ -67,20 +62,56 @@
             height: 300px;
             width: 300px;
         }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown > button {
+            height: 100%;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            width: 300px;
+            top: 100%;
+            left: 0;
+            padding: 10px;
+        }
+
+        .dropdown-content .dropdown-button {
+            display: block;
+            background-color: #555;
+            color: white;
+            border: none;
+            margin: 5px 0;
+            padding: 5px 0;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <ul>
-            <li>
-                <a href="">home</a>
-                <a href="">wiki</a>
-                <a href="">articles</a>
-                <a href="">about us</a>
-            </li>
-        </ul>
-        <h2>Know your fruits</h2>
+        <div>
+            <button>Home</button>
+            <button>Wiki</button>
+            <div class="dropdown">
+                <button class="dropdown-button">Dropdown</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-button">Item 1</button>
+                    <button class="dropdown-button">Item 2</button>
+                    <button class="dropdown-button">Item 3</button>
+                </div>
+            </div>
+            <button>about us</button>
+        </div>
     </header>
 
     <article>
